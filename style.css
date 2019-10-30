@@ -346,11 +346,58 @@ nav {
     right: 25px;
 }
 
-.swiper-container {
-    width: 600px;
-    height: 300px;
+.services {
+    left: 83px;
+    width: 300px;
 }
 
+.swiper-container {
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+}
+
+.project-card-block img {
+    width: 700px !important;
+    margin: 0 auto;
+    position: absolute;
+    object-fit: cover;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    opacity: 0;
+}
+
+.project-description p {
+    color: snow;
+    bottom: 40px;
+    position: absolute;
+}
+
+.project-description button {
+    position: absolute;
+    bottom: 0px;
+    font-size: 21px;
+    border-radius: 3px;
+    background: snow;
+    transition: .6s;
+}
+
+.project-description button:hover, .project-description button:active {
+    background: rgb(255, 158, 158);
+}
+
+.project-description button a {
+    color: black;
+    text-decoration: none;
+}
+
+.code-button {
+    left: 60px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}

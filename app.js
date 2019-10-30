@@ -225,23 +225,17 @@ heading.addEventListener('click', () => {
 
 var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
 
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button-prev',
+      prevEl: '.swiper-button-next',
     },
 
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
+    cubeEffect: {
+        slideShadows: false,
     },
 })
 
@@ -249,6 +243,6 @@ $(document).ready(function () {
     //initialize swiper when document ready
     var mySwiper = new Swiper ('.swiper-container', {
       direction: 'horizontal',
-      loop: true
+      loop: true,
     })
 });
