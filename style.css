@@ -143,7 +143,7 @@ nav {
     width: 130px;
     right: 80px;
     top: 30px;
-    z-index: 200;
+    z-index: 100;
     background: rgb(221, 255, 126);
     display: flex;
     justify-content: center;
@@ -259,11 +259,11 @@ nav {
     align-items: center;
     color: rgb(16, 26, 37);
     height: 76vh;
-    z-index: 01;
+    z-index: 200;
     width: 50%;
-    left: 30vw;
-    overflow: auto;
-    background: rgba(190, 196, 192, 0.788); 
+    left: 35vw;
+    overflow: visible;
+    background: rgba(199, 255, 218, 0.888); 
     border-radius: 3px;
     padding: 25px;
     margin: 20px 18px;
@@ -275,6 +275,54 @@ nav {
     align-items: center;
     z-index: -2;
 }
+
+
+.card {
+    background: seashell;
+    border-radius: 30px;
+    position: absolute;
+    width: 320px;
+    height: 450px;
+    left: -800px;
+    top: 55px;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.card img {
+    object-fit: contain;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+.card-nav {
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.card-nav button {
+    padding: 5px;
+    margin: 5px 3px;
+    border-radius: 3px;
+    background: rgb(255, 60, 60);
+    outline: none;
+    border: none;
+}
+
+.card-list {
+    display: none;
+}
+
+.card-list li {
+    list-style: none;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}

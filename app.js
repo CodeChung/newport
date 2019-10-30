@@ -27,11 +27,11 @@ tl.to('.cover', 1, {
 })
 .to('.rollerbladers', .5, {
     height: 0,
-    ease: Power2.easeOUt
+    ease: Power2.easeOut
 })
 .to('.screen img', .5, {
     height: 0,
-    ease: Power2.easeOUt
+    ease: Power2.easeOut
 })
 
 navButton.addEventListener('click', () => {
@@ -84,6 +84,10 @@ const tlAbout = new TimelineLite({ paused: true, reversed: true })
 
 tlAbout.to('#nav-open-about', 1, {
     top: '10vh',
+    ease: Power2.easeOut
+})
+.to('.card', 1, {
+    left: '-370px',
     ease: Power2.easeOut
 })
 
