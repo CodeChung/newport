@@ -35,8 +35,14 @@ tl.to('.cover', 1, {
 })
 
 navButton.addEventListener('click', () => {
+    if (!tl.reversed()) {
+        toggleTween(tl)
+    }
     if (!tlWork.reversed()) {
         toggleTween(tlWork)
+    }
+    if (!tlContact.reversed()) {
+        toggleTween(tlContact)
     }
     if (!tlAbout.reversed()) {
         toggleTween(tlAbout)
@@ -66,11 +72,15 @@ tlWork.to('#nav-open-work', 1, {
     opacity: '1',
     ease: Power2.easeOut
 })
-.to('.work-greeting', 1.6, {
+.to('.work-greeting', 1.1, {
     opacity: 0,
     ease: Power2.easeOut
 })
-.to('.projects', 1.7, {
+.to('.work-greeting', .8, {
+    'padding-top': '20px',
+    ease: Power2.easeOut
+})
+.to('.projects', 1.1, {
     opacity: 1,
     ease: Power2.easeOut
 })
@@ -78,6 +88,12 @@ tlWork.to('#nav-open-work', 1, {
 workButton.addEventListener('click', () => {
     if (!tl.reversed()) {
         toggleTween(tl)
+    }
+    if (!tlWork.reversed()) {
+        toggleTween(tlWork)
+    }
+    if (!tlContact.reversed()) {
+        toggleTween(tlContact)
     }
     if (!tlAbout.reversed()) {
         toggleTween(tlAbout)
@@ -106,6 +122,12 @@ aboutButton.addEventListener('click', () => {
     if (!tlWork.reversed()) {
         toggleTween(tlWork)
     }
+    if (!tlContact.reversed()) {
+        toggleTween(tlContact)
+    }
+    if (!tlAbout.reversed()) {
+        toggleTween(tlAbout)
+    }
     toggleTween(tlAbout)
 })
 
@@ -116,7 +138,7 @@ const contactButton = document.querySelector('#contact-button')
 const tlContact = new TimelineLite({ paused: true, reversed: true })
 
 tlContact.to('#nav-open-contact', 1, {
-    top: '50%',
+    right: '50vw',
     ease: Power2.easeOut
 })
 
@@ -126,6 +148,9 @@ contactButton.addEventListener('click', () => {
     }
     if (!tlWork.reversed()) {
         toggleTween(tlWork)
+    }
+    if (!tlAbout.reversed()) {
+        toggleTween(tlAbout)
     }
     toggleTween(tlContact)
 })

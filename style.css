@@ -279,10 +279,36 @@ nav {
 }
 
 #nav-open-contact {
-    display: none;
+    position: absolute;
+    right: -1000vw;
+    left: 50vw;
     justify-content: center;
     align-items: center;
     z-index: -2;
+    top: 50vh;
+    z-index: 3000;
+}
+
+.contact-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-list li {
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-list img {
+    margin: 0 20px;
+    width: 45px;
+    padding: 4px;
+    background: chartreuse;
+    border-radius: 3px;
 }
 
 .projects {
@@ -397,6 +423,10 @@ nav {
 
 .code-button {
     left: 60px;
+}
+
+.work-greeting {
+    padding-top: 50vh;
 }
 
 /* Extra small devices (phones, 600px and down) */
