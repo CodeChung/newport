@@ -129,3 +129,68 @@ function myTimer() {
         $('.rollerbladers').toggleClass('rollerbladers-active')
     }
 }
+
+
+const skillButtonFrontend = document.querySelector('.card-front-end')
+
+const tlSkillsFrontend = new TimelineLite({ paused: true, reversed: true })
+
+tlSkillsFrontend.to('.list-active', .2, {
+    opacity: 0,
+    ease: Power2.easeOut
+}).to('.frontend-skills', .2, {
+    opacity: 1,
+    ease: Power2.easeOut
+}).to('.backend-skills', .2, {
+    opacity: 0,
+    ease: Power2.easeOut
+})
+// .to('.services', .2, {
+//     opacity: 0,
+//     ease: Power2.easeOut
+// })
+
+skillButtonFrontend.addEventListener('click', () => {
+    toggleTween(tlSkillsFrontend)
+})
+
+
+const skillButtonBackend = document.querySelector('.card-back-end')
+
+const tlSkillsBackend = new TimelineLite({ paused: true, reversed: true })
+
+tlSkillsBackend.to('.frontend-skills', .2, {
+    opacity: 0,
+    ease: Power2.easeOut
+}).to('.backend-skills', 1, {
+    opacity: 1,
+    ease: Power2.easeOut
+})
+// .to('.services', .2 {
+//     opacity: 0,
+//     ease: Power2.easeOut
+// })
+
+skillButtonBackend.addEventListener('click', () => {
+    toggleTween(tlSkillsBackend)
+})
+
+const skillButtonServices = document.querySelector('.card-services')
+
+const tlSkillsServices = new TimelineLite({ paused: true, reversed: true })
+
+tlSkillsServices.to('.frontend-skills', .2, {
+    opacity: 0,
+    ease: Power2.easeOut
+}).to('.services', 1, {
+    opacity: 1,
+    ease: Power2.easeOut
+})
+// .to('.backend-skills', .2, {
+//     opacity: 0,
+//     ease: Power2.easeOut
+// })
+
+skillButtonServices.addEventListener('click', () => {
+    toggleTween(tlSkillsServices)
+})

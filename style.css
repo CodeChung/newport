@@ -12,6 +12,10 @@ html, body {
     overflow: hidden;
 }
 
+p, li {
+    font-family: 'Muli', sans-serif;
+}
+
 header {
     height: 100vh;
     position: relative;
@@ -104,11 +108,11 @@ nav {
 
 .clothing ul li {
     padding-bottom: 10px;
+    list-style-type: none;
 }
 
 .clothing ul li a {
     text-decoration: none;
-    list-style: none;
     color: #916356;
 }
 
@@ -208,7 +212,7 @@ nav {
 .rollerbladers {
     z-index: 100;
     position: absolute;
-    left: -400px;
+    left: -800px;
     bottom: 5px;
     outline: none;
     background: transparent;
@@ -216,17 +220,17 @@ nav {
     transition: 10s;
 }
 
+.screen {
+    border-radius: 25px !important;
+}
+
 .screen img {
     position: absolute;
-    bottom: 132px;
-    height: 100px;
-    background: url('./images/logo.png') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100px;
-    right: 88px;
+    bottom: 35px;
+    right: 200px;
+    height: 400px;
+    object-fit: contain;
+    width: 200px;
     border-radius: 17px;
 }
 
@@ -316,13 +320,23 @@ nav {
 }
 
 .card-list {
-    display: none;
+    position: absolute;
+    right: 120px;
+    opacity: 0;
+    z-index: 1;
 }
 
 .card-list li {
     list-style: none;
 }
 
+.list-active {
+    opacity: 1;
+}
+
+.backend-skills {
+    right: 25px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}
