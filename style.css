@@ -69,6 +69,12 @@ nav {
 
 .nav-closed ul li {
     padding: 0 5px;
+    transition: .3s;
+    transition-delay: .1s;
+}
+
+.nav-closed ul li:active, .nav-closed ul li:hover {
+    color: gainsboro;
 }
 
 .nav-open {
@@ -149,10 +155,15 @@ nav {
 .sun img {
     width: 100px;
     opacity: .2;
+    transition: 3.14s;
+}
+
+.sun img:hover, .sun img:active {
+    transform: rotate(-60deg);
 }
 
 .sun:hover, .sun:active {
-    transform: rotate(15deg) scale(1.1);
+    transform: rotate(25deg) rotate(-25deg) rotate(25deg) rotate(25deg);
     background: rgb(217, 255, 0);
 }
 
@@ -194,13 +205,14 @@ nav {
 }
 
 .rollerbladers {
+    z-index: 100;
     position: absolute;
     left: 10px;
     bottom: 5px;
     outline: none;
     background: transparent;
     border: none;
-    transition: 3s;
+    transition: 10s;
 }
 
 .screen img {
@@ -218,9 +230,50 @@ nav {
 }
 
 .rollerbladers:active {
-    left: 1000px;
+    left: 1500px;
 }
 
+/* Page Animations */
+
+#nav-open-work {
+    background: black;
+    color: mistyrose;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-open-about {
+    position: absolute;
+    top: calc(-50vw + 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(16, 26, 37);
+    height: 76vh;
+    z-index: 01;
+    width: 50%;
+    left: 30vw;
+    overflow: auto;
+    background: rgba(190, 196, 192, 0.788); 
+    border-radius: 3px;
+    padding: 25px;
+    margin: 20px 18px;
+}
+
+#nav-open-contact {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}

@@ -1,6 +1,8 @@
 const navButton = document.querySelector('.nav-button')
 const navOpen = document.querySelector('.nav-open')
 
+// animation reset
+
 // timeline for animations.
 const tl = new TimelineLite({ paused: true, reversed: true })
 
@@ -23,12 +25,22 @@ tl.to('.cover', 1, {
         navOpen.getElementsByClassName.pointerEvents = 'auto';
     }
 })
-.to('.rollerbladers', 1, {
+.to('.rollerbladers', .5, {
     height: 0,
+    ease: Power2.easeOUt
+})
+.to('.screen img', 1, {
+    opacity: 0,
     ease: Power2.easeOUt
 })
 
 navButton.addEventListener('click', () => {
+    if (!tlWork.reversed()) {
+        toggleTween(tlWork)
+    }
+    if (!tlAbout.reversed()) {
+        toggleTween(tlAbout)
+    }
     toggleTween(tl)
 })
 
@@ -42,37 +54,73 @@ function activateMushroom(mushroom) {
 
 function addClassByClick(button){   
     $(button).addClass("active")
-  }
-// failed flight
-
-
-// keyboard controls
-
-function keyLeftHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
-        $('.rollerbladers').animate({
-            left: "-=50"
-        })
-    }
-    else if(e.key == "Left" || e.key == "ArrowLeft") {
-        $('.rollerbladers').animate({
-            left: "+=50"
-        })
-    }
 }
 
-function keyRightHandler(e) {
-    if(e.key == "Right" || e.key == "ArrowRight") {
-        $('.rollerbladers').animate({
-            left: "-=50"
-        })
-    }
-    else if(e.key == "Left" || e.key == "ArrowLeft") {
-        $('.rollerbladers').animate({
-            left: "+=50"
-        })
-    }
-}
+const workButton = document.querySelector('#work-button')
 
-document.addEventListener("keyleft", keyLeftHandler, false);
-document.addEventListener("keyright", keyRightHandler, false);
+
+
+const tlWork = new TimelineLite({ paused: true, reversed: true })
+
+tlWork.to('#nav-open-work', 1, {
+    opacity: '1',
+    ease: Power2.easeOut
+})
+
+workButton.addEventListener('click', () => {
+    if (!tl.reversed()) {
+        toggleTween(tl)
+    }
+    if (!tlAbout.reversed()) {
+        toggleTween(tlAbout)
+    }
+    toggleTween(tlWork)
+})
+
+
+const aboutButton = document.querySelector('#about-button')
+
+const tlAbout = new TimelineLite({ paused: true, reversed: true })
+
+tlAbout.to('#nav-open-about', 1, {
+    top: '10vh',
+    ease: Power2.easeOut
+})
+
+aboutButton.addEventListener('click', () => {
+    if (!tl.reversed()) {
+        toggleTween(tl)
+    }
+    if (!tlWork.reversed()) {
+        toggleTween(tlWork)
+    }
+    toggleTween(tlAbout)
+})
+
+
+
+const contactButton = document.querySelector('#contact-button')
+
+const tlContact = new TimelineLite({ paused: true, reversed: true })
+
+tlContact.to('#nav-open-contact', 1, {
+    top: '50%',
+    ease: Power2.easeOut
+})
+
+contactButton.addEventListener('click', () => {
+    if (!tl.reversed()) {
+        toggleTween(tl)
+    }
+    if (!tlWork.reversed()) {
+        toggleTween(tlWork)
+    }
+    toggleTween(tlContact)
+})
+
+
+function resetAnimation() {
+    toggleTween(tl)
+    toggleTween(tlWork)
+    toggleTween(tlAbout)
+}
