@@ -63,6 +63,10 @@ nav {
     font-size: 30px;
 }
 
+.nav-closed h1:hover, .nav-closed h1:active {
+    color: skyblue;
+}
+
 .nav-closed ul {
     display: flex;
     width: 50%;
@@ -251,6 +255,7 @@ nav {
     z-index: -1;
     bottom: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -280,6 +285,9 @@ nav {
     z-index: -2;
 }
 
+.projects {
+    opacity: 0;
+}
 
 .card {
     background: seashell;
@@ -337,6 +345,12 @@ nav {
 .backend-skills {
     right: 25px;
 }
+
+.swiper-container {
+    width: 600px;
+    height: 300px;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {}

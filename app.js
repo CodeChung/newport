@@ -66,6 +66,14 @@ tlWork.to('#nav-open-work', 1, {
     opacity: '1',
     ease: Power2.easeOut
 })
+.to('.work-greeting', 1.6, {
+    opacity: 0,
+    ease: Power2.easeOut
+})
+.to('.projects', 1.7, {
+    opacity: 1,
+    ease: Power2.easeOut
+})
 
 workButton.addEventListener('click', () => {
     if (!tl.reversed()) {
@@ -194,3 +202,53 @@ tlSkillsServices.to('.frontend-skills', .2, {
 skillButtonServices.addEventListener('click', () => {
     toggleTween(tlSkillsServices)
 })
+
+
+const heading = document.querySelector('.nav-closed h1')
+
+const tlHeading = new TimelineLite({ paused: true, reversed: true })
+
+heading.addEventListener('click', () => {
+    if (!tl.reversed()) {
+        toggleTween(tl)
+    }
+    if (!tlWork.reversed()) {
+        toggleTween(tlWork)
+    }
+    if (!tlContact.reversed()) {
+        toggleTween(tlContact)
+    }
+    if (!tlAbout.reversed()) {
+        toggleTween(tlAbout)
+    }
+})
+
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+})
+
+$(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+      direction: 'horizontal',
+      loop: true
+    })
+});
