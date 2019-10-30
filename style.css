@@ -130,6 +130,12 @@ nav {
     height: 250px;
 }
 
+#biz {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
 .mushroom {
     position: absolute;
     bottom: 15px;
