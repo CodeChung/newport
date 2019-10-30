@@ -154,17 +154,18 @@ nav {
 
 .sun img {
     width: 100px;
-    opacity: .2;
-    transition: 3.14s;
+    opacity: .01;
+    transition: 1.14s;
 }
 
 .sun img:hover, .sun img:active {
-    transform: rotate(-60deg);
+    transform: rotate(-10deg);
+    opacity: .12;
 }
 
 .sun:hover, .sun:active {
-    transform: rotate(25deg) rotate(-25deg) rotate(25deg) rotate(25deg);
-    background: rgb(217, 255, 0);
+    transform: rotate(15deg) rotate(-15deg) rotate(15deg) rotate(15deg);
+    background: rgba(217, 255, 0, 0.596);
 }
 
 .neon {
@@ -207,7 +208,7 @@ nav {
 .rollerbladers {
     z-index: 100;
     position: absolute;
-    left: 10px;
+    left: -400px;
     bottom: 5px;
     outline: none;
     background: transparent;
@@ -229,8 +230,8 @@ nav {
     border-radius: 17px;
 }
 
-.rollerbladers:active {
-    left: 1500px;
+.rollerbladers:active , .rollerbladers-active{
+    left: 2000px;
 }
 
 /* Page Animations */
@@ -289,3 +290,53 @@ nav {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
+
+.list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+
+    li {
+        list-style-type: none;
+        margin: 0 40px;
+    }
+
+    li a {
+        font-size: 40px;
+        color: #262626;
+        line-height: 80px;
+        transition: .5s;
+
+
+        position: relative;
+        display: block;
+        width: 80px;
+        height: 80px;
+        background: #ffffff;
+        text-align: center;
+        transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0, 0);
+        box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
+    }
+
+    li a:before {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: -10px;
+        height: 20px;   
+        width: 100%;
+        background: #b1b1b1;
+        transition: .5s;
+        transform: rotate(0deg) skew(-45deg);
+
+    }
+
+    li a:hover {
+        transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+    }
+}

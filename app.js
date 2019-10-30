@@ -29,8 +29,8 @@ tl.to('.cover', 1, {
     height: 0,
     ease: Power2.easeOUt
 })
-.to('.screen img', 1, {
-    opacity: 0,
+.to('.screen img', .5, {
+    height: 0,
     ease: Power2.easeOUt
 })
 
@@ -118,9 +118,10 @@ contactButton.addEventListener('click', () => {
     toggleTween(tlContact)
 })
 
+var myVar = setInterval(myTimer, Math.random() * (12000 - 7000) + 7000);
 
-function resetAnimation() {
-    toggleTween(tl)
-    toggleTween(tlWork)
-    toggleTween(tlAbout)
+function myTimer() {
+    if (tl.reversed() && tlWork.reversed() && tlAbout.reversed() && tlContact.reversed()) {
+        $('.rollerbladers').toggleClass('rollerbladers-active')
+    }
 }
