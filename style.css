@@ -308,7 +308,17 @@ nav {
     width: 45px;
     padding: 4px;
     background: chartreuse;
+    box-shadow: 0 0 3px 4px rgb(22, 34, 11);
     border-radius: 3px;
+    transition: .5s;
+}
+
+.contact-list img:hover {
+    transform: translate(3px, 3px);
+}
+
+.contact-list img:active {
+    transform: translate(3px, 6.5px);
 }
 
 .projects {
@@ -319,7 +329,7 @@ nav {
     background: seashell;
     border-radius: 30px;
     position: absolute;
-    width: 320px;
+    width: 275px;
     height: 450px;
     left: -800px;
     top: 55px;
